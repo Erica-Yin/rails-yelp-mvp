@@ -1,0 +1,7 @@
+<div class="container pt-4">
+  <h1>Add a review</h1>
+  <br>
+  <%= render 'form', restaurant: @restaurant, review: @review %>
+  <br>
+  <%= link_to 'Back to the Restaurant', restaurant_path(@restaurant), class:'btn btn-outline-primary' %>
+</div>

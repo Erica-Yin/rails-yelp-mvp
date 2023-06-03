@@ -1,0 +1,21 @@
+<div class="container pt-4">
+  <h1><%= @restaurant.name %></h1>
+  <br>
+  <p><i class="fa-solid fa-utensils"></i> <%= @restaurant.category %></p>
+  <p><i class="fa-solid fa-location-dot"></i> <%= @restaurant.address %></p>
+  <p><i class="fa-solid fa-square-phone"></i> <%= @restaurant.phone_number %></p>
+  <br>
+  <%= link_to 'Back to All Restaurants', restaurants_path, class:'btn btn-outline-primary' %>
+  <br>
+  <hr>
+
+  <p><strong>Reviews</strong></p>
+  <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class:'btn btn-primary' %>
+  <br>
+  <br>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+    <% end %>
+  </ul>
+</div>
